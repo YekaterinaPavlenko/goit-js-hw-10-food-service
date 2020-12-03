@@ -1,4 +1,5 @@
 import menuItemTpl from './templates/menu-item.hbs';
+import menuListTpl from './templates/menu-list.hbs';
 import menuList from './menu.json';
 import './styles.css';
 
@@ -6,16 +7,18 @@ const checkboxRef = document.querySelector('#theme-switch-toggle');
 const bodyRef = document.querySelector('.body');
 const menuBoxRef = document.querySelector('ul.js-menu');
 
-const menuMarcup = createMenu(menuList);
+const menuMarcup = menuListTpl(menuList);
 
 menuBoxRef.insertAdjacentHTML('beforeend', menuMarcup);
 
 // console.log(checkboxRef);
 // console.log(bodyRef);
 
-function createMenu(menuList) {
-  return menuList.map(menuItemTpl).join('');
-}
+// Второй вариант
+// const menuMarcup = createMenu(menuList);
+// function createMenu(menuList) {
+//   return menuList.map(menuItemTpl).join('');
+// }
 
 checkboxRef.addEventListener('change', changeTheme);
 
