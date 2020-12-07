@@ -25,11 +25,12 @@ menuBoxRef.insertAdjacentHTML('beforeend', menuMarcup);
 // function createMenu(menuList) {
 //   return menuList.map(menuItemTpl).join('');
 // }
+
 function changeTheme(event) {
   event.preventDefault();
   const checkBoxValue = event.target.checked;
 
-  if (checkBoxValue === true) {
+  if (checkBoxValue) {
     localStorage.setItem('theme', Theme.DARK);
     localStorage.setItem('checkboxValue', event.target.checked);
 
@@ -43,49 +44,13 @@ function changeTheme(event) {
     bodyRef.classList.remove(Theme.DARK);
   }
 }
-// function changeTheme(event) {
-//   event.preventDefault();
 
-//   const checkBoxValue = event.target.checked;
-//   // console.log(checkBoxValue);
-//   if (checkBoxValue === true) {
-//     localStorage.setItem('theme', Theme.DARK);
-//     localStorage.setItem('checkboxValue', event.target.checked);
-//     checkboxRef.setAttribute('checked', 'true');
-//   } else {
-//     localStorage.setItem('theme', Theme.LIGHT);
-//     localStorage.setItem('checkboxValue', event.target.checked);
-//     checkboxRef.setAttribute('checked', 'false');
-//   }
-
-//   const newlocalTheme = localStorage.getItem('theme');
-
-//   if (newlocalTheme === Theme.DARK) {
-//     bodyRef.classList.add(Theme.DARK);
-//     bodyRef.classList.remove(Theme.LIGHT);
-//   } else {
-//     bodyRef.classList.add(Theme.LIGHT);
-//     bodyRef.classList.remove(Theme.DARK);
-//   }
-// }
 console.log(localcheckboxValue);
 function addLocalTheme() {
   if (localTheme) {
     bodyRef.classList.add(localTheme);
-
-    // checkboxRef.checked;
-    // console.log(checkboxRef.checked);
+    if (localTheme === Theme.DARK) {
+      checkboxRef.checked = true;
+    }
   }
 }
-
-// function changeTheme(event) {
-//   event.preventDefault();
-//   // console.log(event.target);
-
-//   // bodyRef.classList.add('light-theme');
-//   const checkedCheckbox =
-//     checkboxRef.getAttribute('checked') === 'true' || false;
-//   bodyRef.classList.toggle('light-theme');
-//   checkboxRef.setAttribute('checked', !checkedCheckbox);
-//   bodyRef.classList.toggle('dark-theme');
-// }
