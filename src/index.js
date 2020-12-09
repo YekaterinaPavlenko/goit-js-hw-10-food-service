@@ -32,13 +32,11 @@ function changeTheme(event) {
 
   if (checkBoxValue) {
     localStorage.setItem('theme', Theme.DARK);
-    localStorage.setItem('checkboxValue', event.target.checked);
 
     bodyRef.classList.add(Theme.DARK);
     bodyRef.classList.remove(Theme.LIGHT);
   } else {
     localStorage.setItem('theme', Theme.LIGHT);
-    localStorage.setItem('checkboxValue', event.target.checked);
 
     bodyRef.classList.add(Theme.LIGHT);
     bodyRef.classList.remove(Theme.DARK);
