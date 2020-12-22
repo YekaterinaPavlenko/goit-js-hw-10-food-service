@@ -3,6 +3,7 @@ import menuListTpl from './templates/menu-list.hbs';
 import menuList from './menu.json';
 import './styles.css';
 
+console.log(menuListTpl);
 const checkboxRef = document.querySelector('#theme-switch-toggle');
 const bodyRef = document.querySelector('.body');
 const menuBoxRef = document.querySelector('ul.js-menu');
